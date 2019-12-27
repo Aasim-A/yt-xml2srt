@@ -1,0 +1,33 @@
+{
+	"name": "yt-xml2srt",
+	"version": "1.0.0",
+	"description": "Easily convert YouTube caption format from XML to SRT",
+	"main": "./src/xml2srt.js",
+	"scripts": {
+		"test": "node ./test/test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Aasim-A/yt-xml2srt.git"
+	},
+	"keywords": [
+		"youtube",
+		"xml",
+		"srt",
+		"xml2srt",
+		"caption",
+		"yt-caption",
+		"convert",
+		"converter",
+		"yt"
+	],
+	"author": "Aasim-A",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Aasim-A/yt-xml2srt/issues"
+	},
+	"homepage": "https://github.com/Aasim-A/yt-xml2srt#readme",
+	"dependencies": {
+		"xml2js": "^0.4.23"
+	}
+}
