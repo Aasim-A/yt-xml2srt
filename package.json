@@ -1,8 +1,8 @@
 {
 	"name": "yt-xml2srt",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "Easily convert YouTube caption format from XML to SRT",
-	"main": "./src/xml2srt.js",
+	"main": "./src/Xml2Srt.js",
 	"scripts": {
 		"test": "node ./test/test.js"
 	},
