@@ -1,13 +1,13 @@
-[![npm package](https://nodei.co/npm/yt-xml2srt.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/yt-xml2srt/)
-
 # yt-xml2srt
 
 Easily convert YouTube caption format from XML to SRT
 
+[![npm package](https://nodei.co/npm/yt-xml2srt.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/yt-xml2srt/)
+
 # Installation
 
 ```bash
-npm i yt-xml2srt
+npm i -S yt-xml2srt
 ```
 
 Or for Yarn users:
@@ -32,10 +32,10 @@ Or you can use async await
 const xml2srt = require('yt-xml2srt');
 
 try {
-	const res = await xml2srt.Parse('xml string');
-	/* DO SOMETHING WITH RES */
+  const res = await xml2srt.Parse('xml string');
+  /* DO SOMETHING WITH RES */
 } catch (err) {
-	console.log(`Error while converting xml2srt : ${err}`);
+  console.log(`Error while converting xml2srt : ${err}`);
 }
 ```
 
