@@ -20,22 +20,30 @@ yarn add yt-xml2srt
 
 ```js
 const xml2srt = require('yt-xml2srt');
+const fs = require('fs');
 
-xml2srt.Parse('xml string')
-  .then(res => /* DO SOMETHING WITH RES */)
-  .catch(err => console.log(`Error while converting xml2srt : ${err}`));
+// In this example we are getting the data from an XML file, if you have a string you can directly plug it into the function and do the conversion
+const ytXmlCaptionFile = fs.readFileSync('PATH/TO/XML/FILE', 'utf8');
+
+xml2srt.Parse(ytXmlCaptionFile)
+  .then(srt => /* DO SOMETHING WITH SRT */)
+  .catch(err => console.log(`Error while converting XML to SRT : ${err}`));
 ```
 
 Or you can use async await
 
 ```js
 const xml2srt = require('yt-xml2srt');
+const fs = require('fs');
+
+// In this example we are getting the data from an XML file, if you have a string you can directly plug it into the function and do the conversion
+const ytXmlCaptionFile = fs.readFileSync('PATH/TO/XML/FILE', 'utf8');
 
 try {
-  const res = await xml2srt.Parse('xml string');
-  /* DO SOMETHING WITH RES */
+  const srt = await xml2srt.Parse(ytXmlCaptionFile);
+  /* DO SOMETHING WITH SRT */
 } catch (err) {
-  console.log(`Error while converting xml2srt : ${err}`);
+  console.log(`Error while converting XML to SRT : ${err}`);
 }
 ```
 
