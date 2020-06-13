@@ -1,5 +1,5 @@
 const fs = require('fs');
-const xml2srt = require('../src/Xml2Srt');
+const xml2srt = require('..');
 
 const Reset = '\x1b[0m';
 const Bright = '\x1b[1m';
@@ -9,17 +9,16 @@ const FgRed = '\x1b[31m';
 
 console.log(`${FgCyan}${Bright}%s${Reset}`, 'Starting Tests...\n');
 console.time(`${FgGreen}${Bright}Finished in${Reset}`);
-let xmlFile;
-let expectedRes;
 
-try {
-  xmlFile = fs.readFileSync(`${__dirname}/testData/caption.xml`, 'utf8');
-  expectedRes = fs.readFileSync(`${__dirname}/testData/caption.srt`, 'utf8');
-} catch (err) {
-  throw new Error(
-    `${FgRed}${Bright}Tests failed, couldn't open test data${Reset}`
-  );
-}
+const xmlFile = fs.readFileSync(`${__dirname}/testData/caption.xml`, 'utf8');
+const expectedRes = fs.readFileSync(
+  `${__dirname}/testData/caption.srt`,
+  'utf8'
+);
+
+const resSync = xml2srt.ParseSync(xmlFile);
+if (resSync !== expectedRes)
+  throw new Error('Tests failed, expected result does not match result');
 
 xml2srt
   .Parse(xmlFile)
