@@ -18,6 +18,8 @@ yarn add yt-xml2srt
 
 # Usage
 
+## Using Promises:
+
 ```js
 const xml2srt = require('yt-xml2srt');
 
@@ -31,10 +33,21 @@ Or you can use async await
 ```js
 const xml2srt = require('yt-xml2srt');
 
+const srt = await xml2srt
+  .Parse(xmlString)
+  .catch(err => console.log(`Error while converting XML to SRT : ${err}`));
+/* DO SOMETHING WITH SRT */
+```
+
+## Using it synchronously:
+
+```js
+const xml2srt = require('yt-xml2srt');
+
 try {
-  const srt = await xml2srt.Parse(xmlString);
+  const srt = = xml2srt.ParseSync(xmlString);
   /* DO SOMETHING WITH SRT */
-} catch (err) {
+} catch(err) {
   console.log(`Error while converting XML to SRT : ${err}`);
 }
 ```
