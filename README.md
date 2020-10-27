@@ -45,9 +45,9 @@ const srt = await xml2srt
 const xml2srt = require('yt-xml2srt');
 
 try {
-  const srt = = xml2srt.ParseSync(xmlString);
+  const srt = xml2srt.ParseSync(xmlString);
   /* DO SOMETHING WITH SRT */
-} catch(err) {
+} catch (err) {
   console.log(`Error while converting XML to SRT : ${err}`);
 }
 ```
